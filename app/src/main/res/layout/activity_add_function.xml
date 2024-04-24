@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddFunctionActivity">
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/activity1headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:text="Add Polynom"
+            android:textSize="50sp" />
+
+        <EditText
+            android:id="@+id/deget"
+            android:layout_width="293dp"
+            android:layout_height="66dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="45dp"
+            android:hint="Enter Polynom Degree"
+            android:inputType="numberSigned" />
+
+        <Button
+            android:id="@+id/SubmitB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="70dp"
+            android:onClick="setFdeg"
+            android:text="Submit Degree"
+            android:textAllCaps="false" />
+
+        <EditText
+            android:layout_width="281dp"
+            android:layout_height="108dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:hint="Enter Polynom Coefficients seperated by , for example 12,14 for two coefficients " />
+
+        <Button
+            android:id="@+id/SubmitPolynom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+
+            android:text="Submit" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
