@@ -39,17 +39,10 @@
             android:hint="Enter Polynom Degree"
             android:inputType="numberSigned" />
 
-        <Button
-            android:id="@+id/SubmitB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="70dp"
-            android:onClick="setFdeg"
-            android:text="Submit Degree"
-            android:textAllCaps="false" />
+
 
         <EditText
+            android:id="@+id/coeff"
             android:layout_width="281dp"
             android:layout_height="108dp"
             android:layout_gravity="center"
@@ -62,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-
+            android:onClick="submit"
             android:text="Submit" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

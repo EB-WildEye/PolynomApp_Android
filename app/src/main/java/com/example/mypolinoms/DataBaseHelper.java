@@ -1,5 +1,6 @@
 package com.example.mypolinoms;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -13,7 +14,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     static final String FUNC_NUM = "id";
     static final String DEG= "Deg";
     static final String COEFF= " Coefficients ";
-    private static final String CREATE_DB_QUERY = " CREATE TABLE "+DATABASE_TABLE+"("+FUNC_NUM+"INTEGER PRIMARY KEY AUTOINCREMENT,"+ DEG+"INTEGER,"+ COEFF+"INTEGER"+");";
+    //private static final String CREATE_DB_QUERY = "create table " + DATABASE_TABLE +"( " + FUNC_NUM + "INTEGER PRIMARY KEY AUTOINCREMENT," + DEG+ "INTEGER, "+ COEFF+"TEXT NOT NULL "+"); ";
+    private static final String CREATE_DB_QUERY = "CREATE TABLE " + DATABASE_TABLE + " (" +
+    FUNC_NUM + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+    DEG + " INTEGER, " +
+    COEFF + " TEXT);";
     public DataBaseHelper(Context context) {
         super(context, DataBase_Name, null, version);
     }
@@ -24,9 +29,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL(" DROP TABLE IF EXISTS "+DATABASE_TABLE);
+        onCreate(db);
 
     }
 }

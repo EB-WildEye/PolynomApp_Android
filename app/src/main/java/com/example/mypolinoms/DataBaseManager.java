@@ -1,11 +1,14 @@
 package com.example.mypolinoms;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.sql.SQLDataException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DataBaseManager {
     private  DataBaseHelper dbHelper;
@@ -22,7 +25,7 @@ public class DataBaseManager {
     public void close() {
         dbHelper.close();
     }
-    public void insert(Integer Degree, Integer Coefficient){
+    public void insert(Integer Degree, String Coefficient){
         ContentValues contentValues = new ContentValues();
         contentValues.put(DataBaseHelper.DEG, Degree);
         contentValues.put(DataBaseHelper.COEFF, Coefficient);
@@ -42,6 +45,33 @@ public class DataBaseManager {
         contentValues.put(DataBaseHelper.COEFF, Coefficients);
         int ret = database.update(DataBaseHelper.DATABASE_TABLE,contentValues,DataBaseHelper.FUNC_NUM+"="+ id,null);
         return ret;
+    }
+    public void delete(int id){
+        database.delete(DataBaseHelper.DATABASE_TABLE,DataBaseHelper.FUNC_NUM+"="+id,null);
+    }
+    public List<Polynomial> getAllPolynomials() {
+        List<Polynomial> polynomials = new ArrayList<>();
+        // Select All Query
+        String selectQuery = "SELECT * FROM " + DataBaseHelper.DATABASE_TABLE;
+
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // Loop through all rows and add to list
+        if (cursor.moveToFirst()) {
+            do {
+                 Polynomial polynomial = new Polynomial(
+                        cursor.getInt(cursor.getColumnIndex(DataBaseHelper.FUNC_NUM)),
+                        cursor.getInt(cursor.getColumnIndex(DataBaseHelper.DEG)),
+                        cursor.getString(cursor.getColumnIndex(DataBaseHelper.COEFF)));
+
+                polynomials.add(polynomial);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+
+        return polynomials;
     }
 
 }

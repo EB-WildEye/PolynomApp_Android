@@ -26,7 +26,7 @@
             android:textSize="85dp"
             android:textStyle="italic"
             android:textColor="@color/black"
-            android:text="Polinoms" />
+            android:text="Polynoms" />
 
         <Button
             android:id="@+id/AddButton"
@@ -39,5 +39,15 @@
             android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="25dp" />
+
+        <Button
+            android:id="@+id/Viewpolynoms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:layout_marginTop="30dp"
+            android:onClick="ViewPolynoms"
+            android:text="View Polynoms" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

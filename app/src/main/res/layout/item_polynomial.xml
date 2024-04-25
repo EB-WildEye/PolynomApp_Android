@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/tvId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID"
+            android:paddingEnd="10dp"/>
+
+        <TextView
+            android:id="@+id/tvDegree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Degree"
+            android:paddingEnd="10dp"/>
+
+        <TextView
+            android:id="@+id/tvCoefficients"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Coefficients"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

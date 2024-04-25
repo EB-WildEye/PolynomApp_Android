@@ -1,1 +1,0 @@
-"# PolynomApp_Android" 
