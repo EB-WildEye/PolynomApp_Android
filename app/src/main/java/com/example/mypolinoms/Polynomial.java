@@ -11,6 +11,10 @@ public class Polynomial {
         this.coefficients = coefficients;
     }
 
+    public Polynomial() {
+
+    }
+
     public int getId() {
         return id;
     }
@@ -20,6 +24,18 @@ public class Polynomial {
     }
     public String getCoefficients(){
         return coefficients;
+    }
+
+    public void setCoefficients(String coefficients) {
+        this.coefficients = coefficients;
+    }
+
+    public void setDegree(int degree) {
+        this.degree = degree;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
 

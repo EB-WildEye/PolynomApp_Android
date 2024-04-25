@@ -50,28 +50,21 @@ public class DataBaseManager {
         database.delete(DataBaseHelper.DATABASE_TABLE,DataBaseHelper.FUNC_NUM+"="+id,null);
     }
     public List<Polynomial> getAllPolynomials() {
-        List<Polynomial> polynomials = new ArrayList<>();
-        // Select All Query
-        String selectQuery = "SELECT * FROM " + DataBaseHelper.DATABASE_TABLE;
 
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery, null);
-
-        // Loop through all rows and add to list
-        if (cursor.moveToFirst()) {
-            do {
-                 Polynomial polynomial = new Polynomial(
-                        cursor.getInt(cursor.getColumnIndex(DataBaseHelper.FUNC_NUM)),
-                        cursor.getInt(cursor.getColumnIndex(DataBaseHelper.DEG)),
-                        cursor.getString(cursor.getColumnIndex(DataBaseHelper.COEFF)));
-
+            List<Polynomial> polynomials = new ArrayList<>();
+            // Select All Query
+            String selectQuery = "SELECT * FROM " + DataBaseHelper.DATABASE_TABLE;
+            SQLiteDatabase db = dbHelper.getReadableDatabase();
+            Cursor cursor = db.rawQuery(selectQuery, null);
+            while(cursor.moveToNext()){
+                Polynomial polynomial = new Polynomial();
+                polynomial.setId(cursor.getInt(0));
+                polynomial.setDegree(cursor.getInt(1));
+                polynomial.setCoefficients(cursor.getString(2));
                 polynomials.add(polynomial);
-            } while (cursor.moveToNext());
-        }
-        cursor.close();
-        db.close();
+            }
+            return polynomials;
 
-        return polynomials;
-    }
+        }
 
 }
