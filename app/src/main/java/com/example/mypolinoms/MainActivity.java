@@ -28,4 +28,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent=new Intent(this,ViewPolynoms.class);
         startActivity(intent);
     }
+    public void DeletePolynom(View view){
+        Intent intent=new Intent(this,DeletePolynom.class);
+        startActivity(intent);
+    }
 }

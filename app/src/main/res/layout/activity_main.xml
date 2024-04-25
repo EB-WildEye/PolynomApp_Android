@@ -49,5 +49,15 @@
             android:layout_marginTop="30dp"
             android:onClick="ViewPolynoms"
             android:text="View Polynoms" />
+
+        <Button
+            android:id="@+id/delete_polynomBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:onClick="DeletePolynom"
+            android:text="Delete polynom" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
