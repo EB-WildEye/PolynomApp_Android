@@ -3,6 +3,8 @@ package com.example.mypolinoms;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.sql.SQLDataException;
@@ -39,4 +41,6 @@ public class ViewPolynoms extends AppCompatActivity {
         dbManager.close();
         super.onDestroy();
     }
+
+
 }

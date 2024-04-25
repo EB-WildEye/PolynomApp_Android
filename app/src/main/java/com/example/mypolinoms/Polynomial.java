@@ -1,7 +1,7 @@
 package com.example.mypolinoms;
 
 public class Polynomial {
-    private int id;
+    private static int id;
     private int degree;
     private String coefficients;
 
@@ -15,7 +15,7 @@ public class Polynomial {
 
     }
 
-    public int getId() {
+    public static int getId() {
         return id;
     }
 
@@ -37,5 +37,17 @@ public class Polynomial {
     public void setId(int id) {
         this.id = id;
     }
+
+    public String toString(){
+        String poly = "";
+        String[] coeff = coefficients.split(",");
+
+        for(int i=0; i<degree; i++) {
+            if (i==degree){ poly += coeff[i] + "x^" + i; }
+            poly += coeff[i] + "x^" + i + " + ";
+        }
+        return poly;
+    }
+
 }
 
