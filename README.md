@@ -27,12 +27,12 @@ After launching the app, select the desired action from the main screen. To add 
 ## Contributing
 Contributions to PolynomApp are welcome. Please fork the repository and submit a pull request with your proposed changes.
 
-### License
+## License
 This project is licensed under the MIT License.
 
-### Contact
-For support or queries, please reach out --> Heavenlydx@gmail.com || wildeye.eb@gmail.com
+## Contact
+For support or queries, please reach out -->  wildeye.eb@gmail.com  ||  Heavenlydx@gmail.com
 
-### Acknowledgements
+## Acknowledgements
 Thanks to all the contributors who have helped with the development of PolynomApp.
 Special thanks to the Android open-source community for their invaluable resources.
