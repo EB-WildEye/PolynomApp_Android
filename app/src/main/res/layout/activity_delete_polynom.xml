@@ -21,29 +21,40 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="45dp"
-            android:textColor="@color/black"
+            android:layout_marginTop="40dp"
+            app:cardElevation="20dp"
+            android:fontFamily="@font/advent_pro_semibold"
+            android:textColor="@color/darkBlue"
+            android:textSize="60dp"
+            android:textStyle="italic"
             android:text="Delete Polynom" />
+
 
         <EditText
             android:id="@+id/tvId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="100dp"
             android:inputType="number"
-            android:hint="Enter the id number of the function you want\nto delete from the database" />
+            android:hint="Enter function ID\nand delete from the database"
+            android:textColorHint="@color/darkBlue"
+            android:textSize="20dp"
+            android:gravity="center"/>
 
         <Button
             android:id="@+id/deleteBTN"
             android:layout_width="wrap_content"
-            android:textSize="45dp"
-            android:layout_marginTop="45dp"
-            android:layout_gravity="center"
             android:layout_height="wrap_content"
-            android:text="DELETE" />
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            android:textAllCaps="false"
+            android:textSize="25dp"
+            android:elevation="20dp"
+            android:text="DELETE"
+            android:onClick="DeletePolynom"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

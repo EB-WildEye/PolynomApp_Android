@@ -39,12 +39,15 @@ public class Polynomial {
     }
 
     public String toString(){
-        String poly = "";
+        String poly = "F(x)= ";
         String[] coeff = coefficients.split(",");
 
         for(int i=0; i<degree; i++) {
-            if (i==degree){ poly += coeff[i] + "x^" + i; }
-            poly += coeff[i] + "x^" + i + " + ";
+            if (i==degree-1){
+                poly += coeff[i] + "x^" + i;
+            } else {
+                poly += coeff[i] + "x^" + i + " + ";
+            }
         }
         return poly;
     }

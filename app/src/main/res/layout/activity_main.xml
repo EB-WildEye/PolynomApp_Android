@@ -24,10 +24,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="40dp"
             android:fontFamily="@font/advent_pro_semibold"
             android:text="Polynoms"
             android:textColor="@color/darkBlue"
-            android:textSize="85dp"
+            android:textSize="60dp"
             android:textStyle="italic" />
 
         <Button
@@ -35,13 +36,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="100dp"
             android:onClick="addFuncactivity"
             android:text="Add new Func"
             android:textAllCaps="false"
             android:backgroundTint="@color/darkBlue"
             android:fontFamily="@font/advent_pro_semibold"
-            android:textColor="@color/white"
+            android:textColor="@color/lightBlue"
             android:textSize="25dp" />
 
         <Button
@@ -53,7 +54,11 @@
             android:layout_marginTop="30dp"
             android:onClick="ViewPolynoms"
             android:text="View Polynoms"
+            android:backgroundTint="@color/darkBlue"
             android:fontFamily="@font/advent_pro_semibold"
+            android:textColor="@color/lightBlue"
+            android:textSize="25dp"
+
             />
 
 
@@ -66,7 +71,10 @@
             android:textAllCaps="false"
             android:onClick="DeletePolynom"
             android:text="Delete polynom"
+            android:backgroundTint="@color/darkBlue"
             android:fontFamily="@font/advent_pro_semibold"
+            android:textColor="@color/lightBlue"
+            android:textSize="25dp"
             />
 
         <Button
@@ -78,7 +86,10 @@
             android:textAllCaps="false"
             android:onClick="ShowPolynomFunction"
             android:text="Show polynom"
+            android:backgroundTint="@color/darkBlue"
             android:fontFamily="@font/advent_pro_semibold"
+            android:textColor="@color/lightBlue"
+            android:textSize="25dp"
             />
 
     </LinearLayout>

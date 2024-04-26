@@ -24,13 +24,14 @@ public class ViewPolynoms extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_polynoms);
+
         listView = (ListView)findViewById(R.id.listview);
         dbManager = new DataBaseManager(this);
+
         try {
             dbManager.open();
-        } catch (SQLDataException e) {
-            throw new RuntimeException(e);
-        }
+        } catch (SQLDataException e) { e.printStackTrace(); }
+
         List<Polynomial> polynomials = dbManager.getAllPolynomials();
         adapter = new PolynomialAdapter(this, polynomials);
         listView.setAdapter(adapter);

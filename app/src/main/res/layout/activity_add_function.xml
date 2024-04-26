@@ -27,35 +27,49 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
-            android:text="Add Polynom"
-            android:textSize="50sp" />
+            app:cardElevation="20dp"
+            android:fontFamily="@font/advent_pro_semibold"
+            android:text="Add Function"
+            android:textColor="@color/darkBlue"
+            android:textSize="60dp"
+            android:textStyle="italic" />
 
         <EditText
             android:id="@+id/deget"
             android:layout_width="293dp"
             android:layout_height="66dp"
             android:layout_gravity="center"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="100dp"
             android:hint="Enter Polynom Degree"
-            android:inputType="numberSigned" />
-
+            android:textColorHint="@color/darkBlue"
+            android:inputType="numberSigned"
+            android:gravity="center"
+            android:textSize="20dp"
+            />
 
 
         <EditText
             android:id="@+id/coeff"
-            android:layout_width="281dp"
-            android:layout_height="108dp"
+            android:layout_width="288dp"
+            android:layout_height="143dp"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:hint="Enter Polynom Coefficients seperated by , for example 12,14 for two coefficients " />
+            android:layout_marginTop="40dp"
+            android:hint="@string/enter_coefficients_seperated_by_for_example_12_14_for_two_coefficients"
+            android:textColorHint="@color/darkBlue"
+            android:textSize="20dp"
+            android:gravity="center"/>
 
         <Button
             android:id="@+id/SubmitPolynom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="60dp"
             android:onClick="submit"
-            android:text="Submit" />
+            android:text="Submit"
+            android:textAllCaps="false"
+            android:textSize="25dp"
+            android:elevation="20dp"
+            />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

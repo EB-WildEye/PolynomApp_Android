@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyPolinoms</string>
+    <string name="enter_coefficients_seperated_by_for_example_12_14_for_two_coefficients">Enter Coefficients \nseperated by comma,\nfor example :\n12,14 for 2 coefficients</string>
 </resources>

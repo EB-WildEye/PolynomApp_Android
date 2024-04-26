@@ -18,23 +18,35 @@
             android:layout_height="75dp"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:hint="Insert function ID " />
+            android:hint="Insert function ID "
+            android:textColorHint="@color/darkBlue"
+            android:textSize="20dp"
+            android:gravity="center"/>
 
         <Button
             android:id="@+id/showBTN"
-            android:layout_width="181dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:text="Show Polynom" />
+            android:text="Show Polynom"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/darkBlue"
+            android:fontFamily="@font/advent_pro_semibold"
+            android:textColor="@color/lightBlue"
+            android:textSize="25dp"/>
 
         <TextView
             android:id="@+id/showFinalPoly"
             android:layout_width="290dp"
             android:layout_height="102dp"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:text="" />
+            android:layout_marginTop="50dp"
+            android:text=""
+            android:fontFamily="@font/advent_pro_semibold"
+            android:textColor="@color/darkBlue"
+            android:textSize="30dp"
+            />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
