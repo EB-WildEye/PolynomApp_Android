@@ -7,7 +7,6 @@ PolynomApp is an Android application that allows users to manage and work with p
 
 - **Add Polynomials**: Enter and save polynomial expressions.
 - **View Polynomials**: Browse through the saved polynomial expressions.
-- **Polynomial Operations**: Perform various operations on polynomials such as addition, subtraction, multiplication, and finding roots (if applicable to the app functionality).
 
 
 ## Installation
@@ -27,12 +26,6 @@ After launching the app, select the desired action from the main screen. To add 
 ## Contributing
 Contributions to PolynomApp are welcome. Please fork the repository and submit a pull request with your proposed changes.
 
-## License
-This project is licensed under the MIT License.
-
 ## Contact
 For support or queries, please reach out -->  wildeye.eb@gmail.com  ||  Heavenlydx@gmail.com
 
-## Acknowledgements
-Thanks to all the contributors who have helped with the development of PolynomApp.
-Special thanks to the Android open-source community for their invaluable resources.
