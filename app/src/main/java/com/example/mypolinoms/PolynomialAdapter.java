@@ -9,7 +9,10 @@ import android.widget.TextView;
 
 import java.util.List;
 
+
+
 public class PolynomialAdapter extends ArrayAdapter<Polynomial> {
+
 
     public PolynomialAdapter(Context context, List<Polynomial> polynomials) {
         super(context, 0, polynomials);
@@ -31,6 +34,7 @@ public class PolynomialAdapter extends ArrayAdapter<Polynomial> {
         Polynomial polynomial = getItem(position);
 
         // Populate the data into the template view using the data object
+
         tvId.setText(String.valueOf(polynomial.getId()));
         tvDegree.setText(String.valueOf(polynomial.getDegree()));
         tvCoefficients.setText(polynomial.getCoefficients());

@@ -1,7 +1,9 @@
 package com.example.mypolinoms;
 
+import androidx.annotation.NonNull;
+
 public class Polynomial {
-    private static int id;
+    private int id;
     private int degree;
     private String coefficients;
 
@@ -15,14 +17,15 @@ public class Polynomial {
 
     }
 
-    public static int getId() {
-        return id;
+    public int getId() {
+        return this.id;
     }
 
     public int getDegree() {
         return degree;
     }
-    public String getCoefficients(){
+
+    public String getCoefficients() {
         return coefficients;
     }
 
@@ -38,18 +41,43 @@ public class Polynomial {
         this.id = id;
     }
 
-    public String toString(){
-        String poly = "F(x)= ";
+    @NonNull
+    public String toString() {
+        StringBuilder poly = new StringBuilder("F(x) = ");
         String[] coeff = coefficients.split(",");
+        boolean first = true; // flag for the first term
 
-        for(int i=0; i<degree; i++) {
-            if (i==degree-1){
-                poly += coeff[i] + "x^" + i;
+        for (int i = degree; i >= 0; i--) {
+            int coefficient = Integer.parseInt(coeff[i]);
+
+            if (coefficient == 0) continue;
+
+            String sign = " + ";
+            if (coefficient < 0) {
+                sign = " - ";
+                coefficient = -coefficient;
+            }
+
+            if (first) {
+                sign = (coefficient < 0) ? "- " : "";
+                first = false;
+            }
+
+
+            if (i == 0) {
+                poly.append(sign).append(coefficient);
+            } else if (i == 1) {
+                poly.append(sign).append(coefficient != 1 ? coefficient : "").append("x");
             } else {
-                poly += coeff[i] + "x^" + i + " + ";
+                poly.append(sign).append(coefficient != 1 ? coefficient : "").append("x^").append(i);
             }
         }
-        return poly;
+
+        if (poly.toString().equals("F(x) = ")) { // If all coefficients were zero
+            poly.append("0");
+        }
+
+        return poly.toString();
     }
 
 }

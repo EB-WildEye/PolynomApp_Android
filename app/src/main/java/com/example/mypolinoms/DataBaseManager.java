@@ -57,14 +57,10 @@ public class DataBaseManager {
             SQLiteDatabase db = dbHelper.getReadableDatabase();
             Cursor cursor = db.rawQuery(selectQuery, null);
             while(cursor.moveToNext()){
-                Polynomial polynomial = new Polynomial();
-                polynomial.setId(cursor.getInt(0));
-                polynomial.setDegree(cursor.getInt(1));
-                polynomial.setCoefficients(cursor.getString(2));
+                Polynomial polynomial = new Polynomial(cursor.getInt(0),cursor.getInt(1),cursor.getString(2));
                 polynomials.add(polynomial);
             }
             return polynomials;
-
         }
 
 }

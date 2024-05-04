@@ -2,18 +2,14 @@ package com.example.mypolinoms;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.database.Cursor;
-import android.os.Bundle;
-import android.widget.EditText;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.sql.SQLDataException;
-import java.util.Scanner;
-
 
 public class AddFunctionActivity extends AppCompatActivity {
     EditText Degree;
@@ -23,56 +19,56 @@ public class AddFunctionActivity extends AppCompatActivity {
     Integer FinalDegree;
     DataBaseManager db;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_function);
-        final EditText Degree = (EditText) findViewById(R.id.deget);
+        Degree = (EditText) findViewById(R.id.deget);
         submit = (Button) findViewById(R.id.SubmitPolynom);
-        final EditText CoeffEditT = (EditText) findViewById(R.id.coeff);
+        CoeffEditT = (EditText) findViewById(R.id.coeff);
         db = new DataBaseManager(this);
         try {
             db.open();
         } catch (SQLDataException e) {
             throw new RuntimeException(e);
         }
-        Cursor cursor=db.fetch();
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String degreeStr = Degree.getText().toString();
+                String coeffStr = CoeffEditT.getText().toString();
 
-                Integer Fdeg = new Integer(Degree.getText().toString());
-                Integer[] coefficients = new Integer[Fdeg];
-                String coeff = CoeffEditT.getText().toString();
-                if (coeff.isEmpty()&&coeff!=null || Fdeg.equals(0)&&Fdeg!=null) {
-                    Toast.makeText(AddFunctionActivity.this, "invalid input", Toast.LENGTH_SHORT).show();
+                // Validate inputs
+                if (degreeStr.isEmpty() || coeffStr.isEmpty()) {
+                    Toast.makeText(AddFunctionActivity.this, "Invalid input: fields cannot be empty.", Toast.LENGTH_SHORT).show();
+                    goToMainActivity();
+                    return;
                 }
-                FinalCoeff = coeff;
-                FinalDegree = Fdeg;
 
+                try {
+                    FinalDegree = Integer.parseInt(degreeStr);
+                    if (FinalDegree < 0) {
+                        throw new NumberFormatException("Degree must be non-negative");
+                    }
+                } catch (NumberFormatException e) {
+                    Toast.makeText(AddFunctionActivity.this, "Invalid input: Degree must be a non-negative integer.", Toast.LENGTH_SHORT).show();
+                    goToMainActivity();
+                    return;
+                }
+
+                FinalCoeff = coeffStr;
                 db.insert(FinalDegree, FinalCoeff);
-                Toast.makeText(AddFunctionActivity.this, "Polynom has been added", Toast.LENGTH_SHORT).show();
-                //db.close();
-
+                Toast.makeText(AddFunctionActivity.this, "Polynom has been added.", Toast.LENGTH_SHORT).show();
+                db.close();
+                goToMainActivity();
             }
         });
-
-
     }
 
-    /**public void submit(View view){
-     Integer Fdeg= new Integer(Degree.getText().toString());
-     Integer[] coefficients=new Integer[Fdeg];
-     String coeff=CoeffEditT.getText().toString();
-     if(coeff.isEmpty()||Fdeg.equals(0)){
-     Toast.makeText(AddFunctionActivity.this,"invalid input",Toast.LENGTH_SHORT).show();
-     }
-     FinalCoeff=coeff;
-     FinalDegree=Fdeg;
-     dbHelper.add_polynom(FinalDegree,FinalCoeff);
-     Toast.makeText(AddFunctionActivity.this,"Polynom has been added",Toast.LENGTH_SHORT).show();
-     }**/
+    private void goToMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // This flag will close all activities below the main in the stack
+        startActivity(intent);
+    }
 }

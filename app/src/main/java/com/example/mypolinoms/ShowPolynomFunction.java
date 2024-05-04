@@ -55,7 +55,7 @@ public class ShowPolynomFunction extends AppCompatActivity {
                     polynomial.setId(cursor.getInt(0));
                     polynomial.setDegree(cursor.getInt(1));
                     polynomial.setCoefficients(cursor.getString(2));
-                    if(Polynomial.getId() == idShow) {
+                    if(polynomial.getId() == idShow) {
                         polynomTV.setText(polynomial.toString());
                         break;
                     }
