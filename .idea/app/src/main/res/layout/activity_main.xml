@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/lightBlue"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/advent_pro_semibold"
+            android:text="Polynoms"
+            android:textColor="@color/darkBlue"
+            android:textSize="60dp"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/AddButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:onClick="addFuncactivity"
+            android:text="Add new Func"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/darkBlue"
+            android:fontFamily="@font/advent_pro_semibold"
+            android:textColor="@color/lightBlue"
+            android:textSize="25dp" />
+
+        <Button
+            android:id="@+id/Viewpolynoms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:layout_marginTop="30dp"
+            android:onClick="ViewPolynoms"
+            android:text="View Polynoms"
+            android:backgroundTint="@color/darkBlue"
+            android:fontFamily="@font/advent_pro_semibold"
+            android:textColor="@color/lightBlue"
+            android:textSize="25dp"
+
+            />
+
+
+        <Button
+            android:id="@+id/delete_polynomBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:onClick="DeletePolynom"
+            android:text="Delete polynom"
+            android:backgroundTint="@color/darkBlue"
+            android:fontFamily="@font/advent_pro_semibold"
+            android:textColor="@color/lightBlue"
+            android:textSize="25dp"
+            />
+
+        <Button
+            android:id="@+id/showPolyBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:onClick="ShowPolynomFunction"
+            android:text="Show polynom"
+            android:backgroundTint="@color/darkBlue"
+            android:fontFamily="@font/advent_pro_semibold"
+            android:textColor="@color/lightBlue"
+            android:textSize="25dp"
+            />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
