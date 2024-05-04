@@ -1,6 +1,6 @@
 # PolynomApp_Android
 
-PolynomApp is an Android application that allows users to manage and work with polynomial functions. Users can add, view, and manipulate polynomial expressions, making it a handy tool for students and educators alike.
+PolynomApp is an Android application that allows users to manage and work with polynomial functions. Users can add, view, save & delete polynomial expressions, making it a handy tool for students and educators alike.
 
 
 ## Features
