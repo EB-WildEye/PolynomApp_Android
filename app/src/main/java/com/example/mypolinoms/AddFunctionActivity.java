@@ -46,13 +46,15 @@ public class AddFunctionActivity extends AppCompatActivity {
                     return;
                 }
 
+
                 try {
                     FinalDegree = Integer.parseInt(degreeStr);
-                    if (FinalDegree < 0) {
-                        throw new NumberFormatException("Degree must be non-negative");
+                    String[] arr = coeffStr.split(",");
+                    if (FinalDegree < 0 || FinalDegree != arr.length-1) {
+                        throw new NumberFormatException("Invalid Degree or Coefficients input");
                     }
                 } catch (NumberFormatException e) {
-                    Toast.makeText(AddFunctionActivity.this, "Invalid input: Degree must be a non-negative integer.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddFunctionActivity.this, "Invalid Degree or Coefficients input", Toast.LENGTH_SHORT).show();
                     goToMainActivity();
                     return;
                 }
